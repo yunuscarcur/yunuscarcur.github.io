@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İnönü University Campus Twin — Yunus Emre Çarçur</title>
+  <meta name="description" content="COP31 and YÖK-supported 3D digital twin of İnönü University built on MapLibre with ~56k trees and 5-year sustainability simulation.">
+  <meta name="theme-color" content="#0B1220">
+  <meta property="og:title" content="İnönü University Campus Twin — Yunus Emre Çarçur">
+  <meta property="og:description" content="5-year budget, energy, and carbon simulation paired with a 3D MapLibre campus digital twin.">
+  <meta property="og:url" content="https://yunuscarcur.github.io/en/projects/kampus-ikizi.html">
+  <meta property="og:site_name" content="Yunus Emre Çarçur">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://yunuscarcur.github.io/assets/images/project-kampus.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://yunuscarcur.github.io/en/projects/kampus-ikizi.html">
+  <link rel="alternate" hreflang="tr" href="../../projects/kampus-ikizi.html">
+  <link rel="alternate" hreflang="en" href="kampus-ikizi.html">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('portfolio-theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#F7F8FA');
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="../index.html"><span class="brand-mark" aria-hidden="true">YC</span><span>Yunus Emre Çarçur</span></a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="nav-link is-active" href="../projects.html">Projects</a>
+        <a class="nav-link" href="../index.html#about">About</a>
+        <a class="nav-link" href="../index.html#experience">Experience</a>
+        <a class="nav-link" href="../index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn lang-switch" href="../../projects/kampus-ikizi.html" lang="tr" hreflang="tr" aria-label="Türkçe sürüme geç" title="Türkçe">TR</a>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch to light theme">
+          <svg data-icon-sun width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg data-icon-moon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn mobile-menu-btn" type="button" data-mobile-menu-btn aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <svg data-icon-menu width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+          <svg data-icon-close width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile navigation">
+      <a class="nav-link is-active" href="../projects.html">Projects</a>
+      <a class="nav-link" href="../index.html#about">About</a>
+      <a class="nav-link" href="../index.html#experience">Experience</a>
+      <a class="nav-link" href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="content" tabindex="-1">
+    <div class="container">
+      <header class="case-header">
+        <a class="back-link" href="../projects.html">
+          <span class="link-arrow" aria-hidden="true">←</span>
+          <span>All projects</span>
+        </a>
+        <h1 class="hero-title">İnönü University Campus Twin</h1>
+        <p class="hero-lead">
+          A 3D campus digital twin built for our COP31 "AI-Assisted Green University Digital Twin" proposal, simulating 5-year campus budget, energy, and carbon emissions.
+        </p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Event</dt>
+            <dd>COP31 Climate Summit</dd>
+          </div>
+          <div>
+            <dt>Support</dt>
+            <dd>YÖK supported</dd>
+          </div>
+          <div>
+            <dt>Platform</dt>
+            <dd>Flutter (Android &amp; Web)</dd>
+          </div>
+          <div>
+            <dt>Year</dt>
+            <dd>2026</dd>
+          </div>
+        </dl>
+      </header>
+
+      <div class="case-hero-image">
+        <img
+          class="vt-kampus"
+          src="../../assets/images/project-kampus.webp?v=3"
+          alt="İnönü University Campus Twin 3D map with faculty labels, night mode toggle, and campus value bar"
+          width="1280"
+          height="720"
+          fetchpriority="high"
+        >
+      </div>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="problem-heading">
+          <h2 id="problem-heading">Problem</h2>
+          <div class="prose">
+            <p>
+              A university campus's electricity, natural gas, water, maintenance, and transport costs usually remain buried in static spreadsheets rather than being tangible for students and decision-makers.
+            </p>
+            <p>
+              Our goal was to model İnönü University across 6 campus zones in 3D and let users allocate a 5-year budget across buildings and infrastructure while seeing immediate cost, satisfaction, and carbon (tCO₂e) impact.
+            </p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="role-heading">
+          <h2 id="role-heading">My Role</h2>
+          <div class="prose">
+            <p>
+              I contributed to the 50-file Flutter mobile &amp; web application, the map-to-Flutter bridge (WebView on Android, same-origin iframe on web), TR/EN localization, PDF policy report export, and the English COP31 presentation video.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <section class="case-wide" aria-labelledby="architecture-heading">
+        <h2 id="architecture-heading">Architecture</h2>
+        <div class="arch-diagram" role="region" aria-label="Campus Twin system architecture">
+          <div class="arch-node">
+            <span class="arch-node-label">1 · 3D map layer</span>
+            <span class="arch-node-title">MapLibre + Blender &amp; Python</span>
+            <span class="arch-node-desc">OSM and Blender (<code>.glb</code>) building models, ~56k trees extracted from satellite &amp; Meta/WRI data, and NOAA solar angle lighting.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">2 · Simulation core</span>
+            <span class="arch-node-title">Pure Dart (unit tested)</span>
+            <span class="arch-node-desc">Framework-free <code>lib/oyun/</code> engine modeling Malatya climate, facade wear, solar plant, electric shuttle, SDG/ESG, and GreenComp metrics.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">3 · Client &amp; reports</span>
+            <span class="arch-node-title">Flutter Android &amp; Web</span>
+            <span class="arch-node-desc"><code>ikiz_kanali_mobil</code> and <code>ikiz_kanali_web</code> bridges, bilingual TR/EN UI, and shareable PDF policy export via <code>pdf_rapor.dart</code>.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-wide" aria-labelledby="screens-heading">
+        <h2 id="screens-heading">App screens</h2>
+        <div class="screen-gallery screen-gallery--two">
+          <figure class="screen-figure">
+            <button class="screen-zoom" type="button" data-zoom aria-label="Enlarge 3D campus map screen">
+              <img
+                src="../../assets/images/kampus-screen-1.webp"
+                alt="3D campus map showing Rectorate, Library, Faculty of Theology, and stadium labels"
+                width="1024"
+                height="640"
+                loading="lazy"
+                decoding="async"
+              >
+            </button>
+            <figcaption class="screen-caption">3D campus map and building management</figcaption>
+          </figure>
+          <figure class="screen-figure">
+            <button class="screen-zoom" type="button" data-zoom aria-label="Enlarge sustainability dashboard screen">
+              <img
+                src="../../assets/images/kampus-screen-2.webp"
+                alt="Sustainability panel showing 35,300 tCO2e annual emissions and solar plant/electric shuttle investment cards"
+                width="1024"
+                height="640"
+                loading="lazy"
+                decoding="async"
+              >
+            </button>
+            <figcaption class="screen-caption">SDG / ESG sustainability and investment panel</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="tech-heading">
+          <h2 id="tech-heading">Technologies</h2>
+          <div class="tag-list">
+            <span class="mono-tag">Flutter</span>
+            <span class="mono-tag">Dart</span>
+            <span class="mono-tag">MapLibre</span>
+            <span class="mono-tag">Blender (.glb)</span>
+            <span class="mono-tag">Python</span>
+            <span class="mono-tag">WebView / iframe</span>
+            <span class="mono-tag">PDF Export</span>
+            <span class="mono-tag">OpenStreetMap</span>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="challenge-heading">
+          <h2 id="challenge-heading">Hardest technical challenge</h2>
+          <div class="prose">
+            <p>
+              Rendering ~56,000 trees (~32k from Meta &amp; WRI 1 m canopy height maps and ~24k detected from satellite imagery) alongside all campus buildings smoothly on both smartphones and 1440p/4K presentation displays was the toughest engineering hurdle.
+            </p>
+            <p>
+              We partitioned trees into 100 m cells and buildings into 200 m cells to cull out-of-view geometry, simplified distant buildings by ~60% fewer triangles, and rendered trees smaller than 16 px on screen as single-quad points. When frame rate drops below 24 fps, dynamic quality tiers (<code>K1</code>–<code>K3</code>) step down automatically and recover above 48 fps, paired with per-frame pixel caps for integrated and discrete GPUs.
+            </p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="outcome-heading">
+          <h2 id="outcome-heading">Outcome</h2>
+          <div class="prose">
+            <p>
+              Supported by Turkey's Council of Higher Education (YÖK) and selected for presentation at the COP31 Climate Summit. A patent application is currently in preparation.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact">
+              <div class="fact-value">YÖK supported</div>
+              <div class="fact-label">Selected for the COP31 Climate Summit</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">~56k trees</div>
+              <div class="fact-label">3D buildings across 6 zones + cell-based LOD</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">Patent pending</div>
+              <div class="fact-label">Application dossier in preparation</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="links-heading">
+          <h2 id="links-heading">Links</h2>
+          <div class="prose">
+            <p>
+              The live web build and presentation video will be published once the patent filing process is finalized. Feel free to email me with any questions.
+            </p>
+          </div>
+          <div class="case-links">
+            <a class="btn btn-secondary" href="../projects.html">All projects</a>
+            <a class="btn btn-secondary" href="../index.html#contact">Contact</a>
+          </div>
+        </section>
+
+        <a class="case-next" href="dolunay-cafe.html">
+          <div>
+            <span class="mono-label">Next project</span>
+            <div class="case-next-title">Dolunay Cafe</div>
+          </div>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Yunus Emre Çarçur</p>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">All projects</a>
+        <a href="../../assets/yunus-emre-carcur-cv-en.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)<span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="mailto:yunuscarcur27@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/yunus-emre-%C3%A7ar%C3%A7ur-8531a432b/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js" defer></script>
+</body>
+</html>

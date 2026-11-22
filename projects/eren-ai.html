@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eren AI — Yunus Emre Çarçur</title>
+  <meta name="description" content="Kotlin, Google Bard, Firebase Auth & Realtime Database, CameraX, ML Kit ve Google TTS/STT ile geliştirilen kişisel Android yapay zekâ asistanı Eren AI.">
+  <meta name="theme-color" content="#0B1220">
+  <meta property="og:title" content="Eren AI — Yunus Emre Çarçur">
+  <meta property="og:description" content="Sesli komut, 50+ dil çeviri, Google Bard doğal dil katmanı, Firebase Auth/Realtime Database ve CameraX/ML Kit barkod okuyuculu Android asistanı.">
+  <meta property="og:url" content="https://yunuscarcur.github.io/projects/eren-ai.html">
+  <meta property="og:site_name" content="Yunus Emre Çarçur">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:image" content="https://yunuscarcur.github.io/assets/images/project-erenai.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://yunuscarcur.github.io/projects/eren-ai.html">
+  <link rel="alternate" hreflang="tr" href="eren-ai.html">
+  <link rel="alternate" hreflang="en" href="../en/projects/eren-ai.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('portfolio-theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#F7F8FA');
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#icerik">İçeriğe geç</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="../index.html"><span class="brand-mark" aria-hidden="true">YC</span><span>Yunus Emre Çarçur</span></a>
+
+      <nav class="site-nav" aria-label="Ana gezinme">
+        <a class="nav-link is-active" href="../projects.html">Projeler</a>
+        <a class="nav-link" href="../index.html#hakkimda">Hakkımda</a>
+        <a class="nav-link" href="../index.html#gecmis">Geçmiş</a>
+        <a class="nav-link" href="../index.html#iletisim">İletişim</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn lang-switch" href="../en/projects/eren-ai.html" lang="en" hreflang="en" aria-label="Switch to English" title="English">EN</a>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Açık temaya geç">
+          <svg data-icon-sun width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg data-icon-moon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn mobile-menu-btn" type="button" data-mobile-menu-btn aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-nav">
+          <svg data-icon-menu width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+          <svg data-icon-close width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobil gezinme">
+      <a class="nav-link is-active" href="../projects.html">Projeler</a>
+      <a class="nav-link" href="../index.html#hakkimda">Hakkımda</a>
+      <a class="nav-link" href="../index.html#gecmis">Geçmiş</a>
+      <a class="nav-link" href="../index.html#iletisim">İletişim</a>
+    </nav>
+  </header>
+
+  <main id="icerik" tabindex="-1">
+    <div class="container">
+      <header class="case-header">
+        <a class="back-link" href="../projects.html">
+          <span class="link-arrow" aria-hidden="true">←</span>
+          <span>Tüm projeler</span>
+        </a>
+        <h1 class="hero-title">Eren AI</h1>
+        <p class="hero-lead">
+          Türkçe sesli komutlarla uygulama açabilen, kişi arayabilen, müzik ve telefon ayarlarını
+          yöneten, Google Bard ile doğal dil yanıtları üreten ve Firebase ile oturum/veri
+          senkronizasyonu yapan kişisel Android yapay zekâ asistanı.
+        </p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Rol</dt>
+            <dd>Tek geliştirici</dd>
+          </div>
+          <div>
+            <dt>Platform</dt>
+            <dd>Android (minSdk 24 – 35)</dd>
+          </div>
+          <div>
+            <dt>Kapsam</dt>
+            <dd>Google Bard · Firebase · 22 Kotlin dosyası</dd>
+          </div>
+          <div>
+            <dt>Yıl</dt>
+            <dd>2025</dd>
+          </div>
+        </dl>
+      </header>
+
+      <div class="case-hero-image">
+        <img
+          class="vt-erenai"
+          src="../assets/images/project-erenai.webp?v=3"
+          alt="Eren AI uygulama simgesi ve koyu temalı sesli sohbet ekranı"
+          width="1280"
+          height="720"
+          fetchpriority="high"
+        >
+      </div>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="problem-baslik">
+          <h2 id="problem-baslik">Problem</h2>
+          <div class="prose">
+            <p>
+              Android üzerinde uygulama açma, rehberden arama, müzik kontrolü, ses/parlaklık
+              ayarları, 50+ dilde anlık çeviri, barkod tarama ve açık uçlu soru-cevap gibi günlük
+              işleri tek bir sesli sohbet arayüzünde toplamak ve kullanıcı oturumlarıyla sohbet
+              geçmişini bulutta güvenli şekilde senkronize etmek istedim.
+            </p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="rolum-baslik">
+          <h2 id="rolum-baslik">Rolüm</h2>
+          <div class="prose">
+            <p>
+              Uygulamayı tek başıma Kotlin ve Android XML (ViewBinding) ile geliştirdim. Google
+              TTS/STT tabanlı sesli etkileşim akışını, key-value niyet eşleştirme
+              (<code>IntentDetector</code>) ile <strong>Google Bard</strong> doğal dil işleme
+              katmanını, <strong>Firebase Authentication</strong> ve <strong>Firebase Realtime
+              Database</strong> tabanlı güvenli oturum/veri senkronizasyonunu, MyMemory API çeviri
+              ekranını ve CameraX + ML Kit destekli barkod okuyucu ile bağlantı yönlendiriciyi
+              modüler sınıflar olarak tasarladım.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <section class="case-wide" aria-labelledby="mimari-baslik">
+        <h2 id="mimari-baslik">Mimari</h2>
+        <div class="arch-diagram" role="region" aria-label="Eren AI modül mimarisi">
+          <div class="arch-node">
+            <span class="arch-node-label">1 · Ses &amp; doğal dil</span>
+            <span class="arch-node-title">Google STT + Bard + Niyet</span>
+            <span class="arch-node-desc">Sesli/yazılı komutu önce key-value <code>IntentDetector</code> ile çözer; açık uçlu soruları <code>ContextManager</code> bağlamıyla Google Bard doğal dil katmanına yönlendirir.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">2 · Cihaz &amp; araçlar</span>
+            <span class="arch-node-title">Sistem, kamera &amp; çeviri</span>
+            <span class="arch-node-desc"><code>AppLauncher</code>, <code>ContactManager</code>, müzik/sistem kontrolleri, CameraX + ML Kit barkod okuyucu, link yönlendirici ve 50+ dil MyMemory API çeviri ekranı.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">3 · Bulut &amp; sesli yanıt</span>
+            <span class="arch-node-title">Firebase &amp; Google TTS</span>
+            <span class="arch-node-desc">Firebase Auth ile oturum yönetimi, Firebase Realtime Database ile anlık sohbet/tercih senkronizasyonu ve <code>TTSManager</code> üzerinden sesli yanıt çıkışı.</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="teknolojiler-baslik">
+          <h2 id="teknolojiler-baslik">Teknolojiler</h2>
+          <div class="tag-list">
+            <span class="mono-tag">Kotlin</span>
+            <span class="mono-tag">Android Studio &amp; XML</span>
+            <span class="mono-tag">Google Bard (NLP)</span>
+            <span class="mono-tag">Firebase Auth</span>
+            <span class="mono-tag">Firebase Realtime Database</span>
+            <span class="mono-tag">Google TTS / STT</span>
+            <span class="mono-tag">CameraX &amp; ML Kit Barcode</span>
+            <span class="mono-tag">MyMemory API</span>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="sorun-baslik">
+          <h2 id="sorun-baslik">En zor teknik sorun</h2>
+          <div class="prose">
+            <p>
+              Asıl zorluk, cihaz üzerinde anında çalışması gereken deterministik komutlarla (örneğin
+              uygulama açma, kişi arama, müzik/parlaklık kontrolü) açık uçlu yapay zekâ sorularını
+              birbirine karıştırmadan ve gecikme yaratmadan ayırmaktı.
+            </p>
+            <p>
+              Bunu iki kademeli bir yönlendirme hattıyla çözdüm: ilk aşamada hafif key-value
+              <code>IntentDetector</code> yerel cihaz komutlarını milisaniyeler içinde yakalayıp
+              doğrudan sistem yöneticilerine aktarıyor; eşleşmeyen serbest ifadeler ise konuşma
+              bağlamıyla birlikte Google Bard doğal dil katmanına gidip yanıtı hem sesli
+              (<code>TTSManager</code>) hem de Firebase Realtime Database üzerinden senkronize
+              edilen sohbet akışına yazıyor.
+            </p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="sonuc-baslik">
+          <h2 id="sonuc-baslik">Sonuç</h2>
+          <div class="prose">
+            <p>
+              Android sistem izinleri, CameraX yaşam döngüsü, ML Kit görüntü analizi, doğal dil
+              yönlendirme ve Firebase Auth/Realtime Database entegrasyonu konusunda bana en kapsamlı
+              pratiği kazandıran proje oldu. Bu deneyimin ardından Watchly'de Jetpack Compose ve
+              Cloud Functions tabanlı bulut mimarisine geçtim.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact">
+              <div class="fact-value">Bard + Niyet</div>
+              <div class="fact-label">Key-value yerel komutlar ve doğal dil katmanı</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">50+ dil</div>
+              <div class="fact-label">Sesli giriş ve çıkış destekli anlık çeviri</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">Firebase Sync</div>
+              <div class="fact-label">Güvenli oturum yönetimi ve bulut veri eşitleme</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="baglantilar-baslik">
+          <h2 id="baglantilar-baslik">Bağlantılar</h2>
+          <div class="case-links">
+            <a class="btn btn-secondary" href="../projects.html">Tüm projeler</a>
+            <a class="btn btn-secondary" href="../index.html#iletisim">İletişim</a>
+          </div>
+        </section>
+
+        <a class="case-next" href="market-otomasyon.html">
+          <div>
+            <span class="mono-label">Sonraki proje</span>
+            <div class="case-next-title">Market Otomasyon Sistemi</div>
+          </div>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Yunus Emre Çarçur</p>
+      <div class="footer-links">
+        <a href="../index.html">Ana sayfa</a>
+        <a href="../projects.html">Tüm projeler</a>
+        <a href="../assets/yunus-emre-carcur-cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)<span class="sr-only"> (yeni sekmede açılır)</span></a>
+        <a href="mailto:yunuscarcur27@gmail.com">E-posta</a>
+        <a href="https://www.linkedin.com/in/yunus-emre-%C3%A7ar%C3%A7ur-8531a432b/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (yeni sekmede açılır)</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous Fire-Fighting Robot — Yunus Emre Çarçur</title>
+  <meta name="description" content="Autonomous Arduino UNO robot with 3 ultrasonic sensors, 3 flame sensors, and an L9110 fan module for indoor patrol and fire suppression.">
+  <meta name="theme-color" content="#0B1220">
+  <meta property="og:title" content="Autonomous Fire-Fighting Robot — Yunus Emre Çarçur">
+  <meta property="og:description" content="Autonomous Arduino robot that avoids obstacles, locates flames from three directions, and extinguishes them.">
+  <meta property="og:url" content="https://yunuscarcur.github.io/en/projects/yangin-robotu.html">
+  <meta property="og:site_name" content="Yunus Emre Çarçur">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://yunuscarcur.github.io/assets/images/yunus.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://yunuscarcur.github.io/en/projects/yangin-robotu.html">
+  <link rel="alternate" hreflang="tr" href="../../projects/yangin-robotu.html">
+  <link rel="alternate" hreflang="en" href="yangin-robotu.html">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('portfolio-theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#F7F8FA');
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="../index.html"><span class="brand-mark" aria-hidden="true">YC</span><span>Yunus Emre Çarçur</span></a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="nav-link is-active" href="../projects.html">Projects</a>
+        <a class="nav-link" href="../index.html#about">About</a>
+        <a class="nav-link" href="../index.html#experience">Experience</a>
+        <a class="nav-link" href="../index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn lang-switch" href="../../projects/yangin-robotu.html" lang="tr" hreflang="tr" aria-label="Türkçe sürüme geç" title="Türkçe">TR</a>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch to light theme">
+          <svg data-icon-sun width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg data-icon-moon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn mobile-menu-btn" type="button" data-mobile-menu-btn aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <svg data-icon-menu width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+          <svg data-icon-close width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile navigation">
+      <a class="nav-link is-active" href="../projects.html">Projects</a>
+      <a class="nav-link" href="../index.html#about">About</a>
+      <a class="nav-link" href="../index.html#experience">Experience</a>
+      <a class="nav-link" href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="content" tabindex="-1">
+    <div class="container">
+      <header class="case-header">
+        <a class="back-link" href="../projects.html">
+          <span class="link-arrow" aria-hidden="true">←</span>
+          <span>All projects</span>
+        </a>
+        <h1 class="hero-title">Autonomous Fire-Fighting Robot</h1>
+        <p class="hero-lead">
+          An autonomous Arduino robot that patrols while avoiding obstacles using three ultrasonic sensors, locates flame sources from three directions, and extinguishes them with an onboard fan.
+        </p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Board</dt>
+            <dd>Arduino UNO</dd>
+          </div>
+          <div>
+            <dt>Language</dt>
+            <dd>C++ (Arduino IDE)</dd>
+          </div>
+          <div>
+            <dt>Sensors</dt>
+            <dd>3× HC-SR04 · 3× Y-026</dd>
+          </div>
+          <div>
+            <dt>Year</dt>
+            <dd>2025</dd>
+          </div>
+        </dl>
+      </header>
+
+      <section class="case-hero-spec" aria-label="Hardware summary">
+        <dl>
+          <div>
+            <dt>Controller</dt>
+            <dd>Arduino UNO (C++)</dd>
+          </div>
+          <div>
+            <dt>Obstacle detection</dt>
+            <dd>3× HC-SR04 ultrasonic distance sensors (left, right, front)</dd>
+          </div>
+          <div>
+            <dt>Flame detection</dt>
+            <dd>3× Y-026 analog flame sensors (3-axis comparison)</dd>
+          </div>
+          <div>
+            <dt>Drive &amp; suppression</dt>
+            <dd>Dual DC motors + L9110 fan module</dd>
+          </div>
+        </dl>
+      </section>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="problem-heading">
+          <h2 id="problem-heading">Problem</h2>
+          <div class="prose">
+            <p>
+              I wanted to build an autonomous indoor prototype capable of patrolling without human intervention, navigating around obstacles, and immediately switching from patrol mode to flame targeting and suppression when fire is detected.
+            </p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="role-heading">
+          <h2 id="role-heading">My Role</h2>
+          <div class="prose">
+            <p>
+              I wired the circuit, calibrated sensor thresholds across all 6 sensors, built the dual DC motor steering logic, and programmed the patrol / target / extinguish state machine in C++.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <section class="case-wide" aria-labelledby="architecture-heading">
+        <h2 id="architecture-heading">Architecture</h2>
+        <div class="arch-diagram" role="region" aria-label="Fire-fighting robot control flow">
+          <div class="arch-node">
+            <span class="arch-node-label">1 · Patrol mode</span>
+            <span class="arch-node-title">3× HC-SR04 ultrasonic</span>
+            <span class="arch-node-desc">Continuously measures left, right, and front clearance and steers toward open paths when obstacles appear.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">2 · Flame detection</span>
+            <span class="arch-node-title">3× Y-026 analog sensors</span>
+            <span class="arch-node-desc">Compares analog intensity across three directions and aligns the robot toward the strongest flame signal.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">3 · Suppression</span>
+            <span class="arch-node-title">L9110 fan module</span>
+            <span class="arch-node-desc">Stops at a safe distance, activates the fan, and resumes patrol once flame readings return to baseline.</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="tech-heading">
+          <h2 id="tech-heading">Technologies</h2>
+          <div class="tag-list">
+            <span class="mono-tag">Arduino UNO</span>
+            <span class="mono-tag">C++</span>
+            <span class="mono-tag">HC-SR04</span>
+            <span class="mono-tag">Y-026 Flame Sensor</span>
+            <span class="mono-tag">L9110 Fan Module</span>
+            <span class="mono-tag">DC Motor Control</span>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="outcome-heading">
+          <h2 id="outcome-heading">Outcome</h2>
+          <div class="prose">
+            <p>
+              The robot reliably navigated an indoor test arena, located small flame sources, and extinguished them autonomously. The multi-sensor calibration experience directly paved the way for our Robotistan UNO Q Autonomous Irrigation project.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact">
+              <div class="fact-value">6 sensors</div>
+              <div class="fact-label">3 ultrasonic + 3 analog flame sensors</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">3-way tracking</div>
+              <div class="fact-label">Left, right, and front flame alignment</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">Fully autonomous</div>
+              <div class="fact-label">Patrol, approach, and fan suppression loop</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="links-heading">
+          <h2 id="links-heading">Links</h2>
+          <div class="case-links">
+            <a class="btn btn-secondary" href="../projects.html">All projects</a>
+            <a class="btn btn-secondary" href="../index.html#contact">Contact</a>
+          </div>
+        </section>
+
+        <a class="case-next" href="izeka.html">
+          <div>
+            <span class="mono-label">Next project</span>
+            <div class="case-next-title">IZeka</div>
+          </div>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Yunus Emre Çarçur</p>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">All projects</a>
+        <a href="../../assets/yunus-emre-carcur-cv-en.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)<span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="mailto:yunuscarcur27@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/yunus-emre-%C3%A7ar%C3%A7ur-8531a432b/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js" defer></script>
+</body>
+</html>

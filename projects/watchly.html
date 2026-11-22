@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watchly: What To Watch — Yunus Emre Çarçur</title>
+  <meta name="description" content="Kotlin, Jetpack Compose ve Firebase Cloud Functions ile geliştirilip Google Play'de yayınlanan Watchly Android uygulamasının vaka çalışması.">
+  <meta name="theme-color" content="#0B1220">
+  <meta property="og:title" content="Watchly: What To Watch — Yunus Emre Çarçur">
+  <meta property="og:description" content="240+ kayıtlı kullanıcılı, 8 dil destekli ve 13 Cloud Function ile çalışan Android uygulaması.">
+  <meta property="og:url" content="https://yunuscarcur.github.io/projects/watchly.html">
+  <meta property="og:site_name" content="Yunus Emre Çarçur">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:image" content="https://yunuscarcur.github.io/assets/images/project-watchly.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://yunuscarcur.github.io/projects/watchly.html">
+  <link rel="alternate" hreflang="tr" href="watchly.html">
+  <link rel="alternate" hreflang="en" href="../en/projects/watchly.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('portfolio-theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#F7F8FA');
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#icerik">İçeriğe geç</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="../index.html"><span class="brand-mark" aria-hidden="true">YC</span><span>Yunus Emre Çarçur</span></a>
+
+      <nav class="site-nav" aria-label="Ana gezinme">
+        <a class="nav-link is-active" href="../projects.html">Projeler</a>
+        <a class="nav-link" href="../index.html#hakkimda">Hakkımda</a>
+        <a class="nav-link" href="../index.html#gecmis">Geçmiş</a>
+        <a class="nav-link" href="../index.html#iletisim">İletişim</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn lang-switch" href="../en/projects/watchly.html" lang="en" hreflang="en" aria-label="Switch to English" title="English">EN</a>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Açık temaya geç">
+          <svg data-icon-sun width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg data-icon-moon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn mobile-menu-btn" type="button" data-mobile-menu-btn aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-nav">
+          <svg data-icon-menu width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+          <svg data-icon-close width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobil gezinme">
+      <a class="nav-link is-active" href="../projects.html">Projeler</a>
+      <a class="nav-link" href="../index.html#hakkimda">Hakkımda</a>
+      <a class="nav-link" href="../index.html#gecmis">Geçmiş</a>
+      <a class="nav-link" href="../index.html#iletisim">İletişim</a>
+    </nav>
+  </header>
+
+  <main id="icerik" tabindex="-1">
+    <div class="container">
+      <header class="case-header">
+        <a class="back-link" href="../projects.html">
+          <span class="link-arrow" aria-hidden="true">←</span>
+          <span>Tüm projeler</span>
+        </a>
+        <h1 class="hero-title">Watchly: What To Watch</h1>
+        <p class="hero-lead">
+          Ne izleyeceğine karar vermeyi kolaylaştıran, arkadaşlarla ortak izleme listesi
+          tutulabilen ve Google Play'de yayında olan Android uygulaması.
+        </p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Rol</dt>
+            <dd>Tek geliştirici</dd>
+          </div>
+          <div>
+            <dt>Platform</dt>
+            <dd>Android · Play Store</dd>
+          </div>
+          <div>
+            <dt>Kapsam</dt>
+            <dd>188 Kotlin dosyası · 8 dil</dd>
+          </div>
+          <div>
+            <dt>Yıl</dt>
+            <dd>2025 – 2026</dd>
+          </div>
+        </dl>
+      </header>
+
+      <div class="case-hero-image">
+        <img
+          class="vt-watchly"
+          src="../assets/images/project-watchly.webp?v=3"
+          alt="Watchly'nin arama, ana sayfa ve yapım detay ekranları"
+          width="1280"
+          height="720"
+          fetchpriority="high"
+        >
+      </div>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="problem-baslik">
+          <h2 id="problem-baslik">Problem</h2>
+          <div class="prose">
+            <p>
+              Film ve dizi önerisi ararken farklı platformlar arasında gezinmek, arkadaşlarla ortak
+              bir izleme listesi tutup neyin nerede yayınlandığını görmek genelde dağınık ilerliyor.
+              Hem hızlı keşif hem de ortak liste paylaşımını tek yerde toplayan, çok dilli bir
+              Android uygulaması yapmak istedim.
+            </p>
+            <p>
+              Teknik tarafta iki kritik kısıt vardı: TMDB okuma anahtarını APK'nın içinde
+              bırakmamak ve bir izleme listesi açıldığında onlarca yapımın detayını istemciden tek
+              tek çekmek yerine düşük gecikmeyle yüklemek.
+            </p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="rolum-baslik">
+          <h2 id="rolum-baslik">Rolüm</h2>
+          <div class="prose">
+            <p>
+              Android istemciyi, Node.js arka ucunu ve web paylaşım sayfalarını tek başıma yazdım.
+              Jetpack Compose ile ekranları kurdum; Türkçe, İngilizce, Almanca, İspanyolca,
+              Fransızca, İtalyanca, Japonca ve Portekizce olmak üzere 8 dilde yerelleştirdim.
+            </p>
+            <p>
+              Arka uçta 13 Cloud Function yazdım: TMDB toplu proxy, ortak listeye film eklendiğinde
+              giden bildirimler, takip ve davet linki çözümleme, liste kapağı yükleme, üye
+              istatistikleri ve Google Play gereksinimi olan hesap silme akışı. Kod tabanında
+              Detekt ve Spotless (ktlint) ile statik analiz, release derlemesinde R8 küçültme
+              kullandım.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <section class="case-wide" aria-labelledby="mimari-baslik">
+        <h2 id="mimari-baslik">Mimari</h2>
+        <div class="arch-diagram" role="region" aria-label="Watchly sistem mimarisi">
+          <div class="arch-node">
+            <span class="arch-node-label">1 · Android istemci</span>
+            <span class="arch-node-title">Kotlin &amp; Jetpack Compose</span>
+            <span class="arch-node-desc">188 Kotlin dosyası, Credential Manager ile Google girişi, Play In-App Updates, WorkManager bildirimleri ve App Links.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">2 · Sunucusuz arka uç</span>
+            <span class="arch-node-title">13 Cloud Function (europe-west1)</span>
+            <span class="arch-node-desc">Secret Manager'da tutulan TMDB anahtarıyla tek istekte 50'ye kadar paralel çağrı; davet, takip ve bildirim tetikleyicileri.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">3 · Veri &amp; web paylaşımı</span>
+            <span class="arch-node-title">Realtime DB, Storage &amp; Hosting</span>
+            <span class="arch-node-desc">Anlık ortak liste senkronizasyonu, uCrop + ExifInterface ile profil medyaları ve <code>/join</code>, <code>/sharedlist</code>, <code>/movie</code> web yönlendirmeleri.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-wide" aria-labelledby="ekranlar-baslik">
+        <h2 id="ekranlar-baslik">Uygulama ekranları</h2>
+        <div class="screen-gallery">
+          <figure class="screen-figure">
+            <button class="screen-zoom" type="button" data-zoom aria-label="Keşif ekranını büyüt">
+              <img
+                src="../assets/images/watchly-screen-1.webp"
+                alt="Watchly ana sayfası: öne çıkan film kartı ve izleme önerileri"
+                width="540"
+                height="1170"
+                loading="lazy"
+                decoding="async"
+              >
+            </button>
+            <figcaption class="screen-caption">Ana sayfa ve öne çıkanlar</figcaption>
+          </figure>
+          <figure class="screen-figure">
+            <button class="screen-zoom" type="button" data-zoom aria-label="Arama ekranını büyüt">
+              <img
+                src="../assets/images/watchly-screen-2.webp"
+                alt="Watchly arama ekranı: anlık arama çubuğu, öneriler ve kategori kartları"
+                width="540"
+                height="1170"
+                loading="lazy"
+                decoding="async"
+              >
+            </button>
+            <figcaption class="screen-caption">Arama ve kategoriler</figcaption>
+          </figure>
+          <figure class="screen-figure">
+            <button class="screen-zoom" type="button" data-zoom aria-label="Yapım detay ekranını büyüt">
+              <img
+                src="../assets/images/watchly-screen-3.webp"
+                alt="Watchly yapım detay sayfası: fragman, puan, izleme platformları ve özet"
+                width="540"
+                height="1170"
+                loading="lazy"
+                decoding="async"
+              >
+            </button>
+            <figcaption class="screen-caption">Yapım detayı, puan ve platformlar</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="sorun-baslik">
+          <h2 id="sorun-baslik">En zor teknik sorun</h2>
+          <div class="prose">
+            <p>
+              Bir kullanıcının listesinde onlarca film veya dizi varken her biri için istemciden
+              ayrı TMDB isteği atmak hem listeyi yavaşlatıyordu hem de API anahtarını APK'da
+              taşıma riski yaratıyordu. Öte yandan, genel bir proxy yazarken SSRF veya kötüye
+              kullanım açığı bırakmamak gerekiyordu.
+            </p>
+            <p>
+              <code>europe-west1</code> bölgesinde çalışan <code>tmdbProxy</code> fonksiyonunu
+              yazdım. İsteklerde önce Firebase Auth doğrulaması ve sıkı regex tabanlı yol/parametre
+              kontrolü yapılıyor; <code>redirect: 'manual'</code> ile 3xx yönlendirmelerinde Bearer
+              anahtarının dışarı sızması engelleniyor. 50'ye kadar çağrı <code>Promise.allSettled</code>
+              ile paralel çalıştığı için tek bir hatalı TMDB cevabı tüm paketi bozmuyor;
+              <code>maxInstances: 10</code> ile maliyet üst sınırı da kontrol altında tutuluyor.
+            </p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="teknolojiler-baslik">
+          <h2 id="teknolojiler-baslik">Teknolojiler</h2>
+          <div class="tag-list">
+            <span class="mono-tag">Kotlin</span>
+            <span class="mono-tag">Jetpack Compose</span>
+            <span class="mono-tag">Material 3</span>
+            <span class="mono-tag">Navigation Compose</span>
+            <span class="mono-tag">WorkManager</span>
+            <span class="mono-tag">Credential Manager</span>
+            <span class="mono-tag">Coil &amp; Lottie</span>
+            <span class="mono-tag">Firebase Auth &amp; RTDB</span>
+            <span class="mono-tag">Cloud Functions (Node.js)</span>
+            <span class="mono-tag">App Check &amp; Crashlytics</span>
+            <span class="mono-tag">Remote Config &amp; FCM</span>
+            <span class="mono-tag">Firebase Hosting</span>
+            <span class="mono-tag">Detekt &amp; Spotless</span>
+            <span class="mono-tag">TMDB API</span>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="sonuc-baslik">
+          <h2 id="sonuc-baslik">Sonuç</h2>
+          <div class="prose">
+            <p>
+              Uygulama Google Play Store'da v1.2.5 sürümüyle yayında. Şu an 248 kayıtlı kullanıcısı
+              ve kullanıcıların oluşturduğu 39 ortak izleme listesi var; 8 dilde aktif olarak
+              kullanılıyor.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact">
+              <div class="fact-value">248 kullanıcı</div>
+              <div class="fact-label">Firebase üzerinde kayıtlı aktif hesap</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">39 ortak liste</div>
+              <div class="fact-label">Arkadaşlarla paylaşılan izleme listesi</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">8 dil · 13 fonksiyon</div>
+              <div class="fact-label">Play Store v1.2.5 · tek istekte 50 paralel TMDB çağrısı</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="baglantilar-baslik">
+          <h2 id="baglantilar-baslik">Bağlantılar</h2>
+          <div class="case-links">
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.emre.watchly" target="_blank" rel="noopener noreferrer">
+              <span>Google Play Store'da aç</span>
+              <span aria-hidden="true">↗</span>
+              <span class="sr-only"> (yeni sekmede açılır)</span>
+            </a>
+            <a class="btn btn-secondary" href="../projects.html">Tüm projeler</a>
+          </div>
+        </section>
+
+        <a class="case-next" href="otonom-sulama.html">
+          <div>
+            <span class="mono-label">Sonraki proje</span>
+            <div class="case-next-title">Otonom Sulama Sistemi</div>
+          </div>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Yunus Emre Çarçur</p>
+      <div class="footer-links">
+        <a href="../index.html">Ana sayfa</a>
+        <a href="../projects.html">Tüm projeler</a>
+        <a href="../assets/yunus-emre-carcur-cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)<span class="sr-only"> (yeni sekmede açılır)</span></a>
+        <a href="mailto:yunuscarcur27@gmail.com">E-posta</a>
+        <a href="https://www.linkedin.com/in/yunus-emre-%C3%A7ar%C3%A7ur-8531a432b/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (yeni sekmede açılır)</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

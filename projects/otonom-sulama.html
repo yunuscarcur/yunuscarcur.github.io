@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otonom Sulama Sistemi — Yunus Emre Çarçur</title>
+  <meta name="description" content="Robotistan Arduino UNO Q programına seçilen, çevresel sensör verileriyle karar veren otonom sulama sistemi.">
+  <meta name="theme-color" content="#0B1220">
+  <meta property="og:title" content="Otonom Sulama Sistemi — Yunus Emre Çarçur">
+  <meta property="og:description" content="Arduino UNO Q ve 5 sensörle bitkiye göre karar veren otonom sulama ve mobil izleme projesi.">
+  <meta property="og:url" content="https://yunuscarcur.github.io/projects/otonom-sulama.html">
+  <meta property="og:site_name" content="Yunus Emre Çarçur">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:image" content="https://yunuscarcur.github.io/assets/images/project-sulama.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://yunuscarcur.github.io/projects/otonom-sulama.html">
+  <link rel="alternate" hreflang="tr" href="otonom-sulama.html">
+  <link rel="alternate" hreflang="en" href="../en/projects/otonom-sulama.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('portfolio-theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#F7F8FA');
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#icerik">İçeriğe geç</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="../index.html"><span class="brand-mark" aria-hidden="true">YC</span><span>Yunus Emre Çarçur</span></a>
+
+      <nav class="site-nav" aria-label="Ana gezinme">
+        <a class="nav-link is-active" href="../projects.html">Projeler</a>
+        <a class="nav-link" href="../index.html#hakkimda">Hakkımda</a>
+        <a class="nav-link" href="../index.html#gecmis">Geçmiş</a>
+        <a class="nav-link" href="../index.html#iletisim">İletişim</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn lang-switch" href="../en/projects/otonom-sulama.html" lang="en" hreflang="en" aria-label="Switch to English" title="English">EN</a>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Açık temaya geç">
+          <svg data-icon-sun width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg data-icon-moon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn mobile-menu-btn" type="button" data-mobile-menu-btn aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-nav">
+          <svg data-icon-menu width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+          <svg data-icon-close width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobil gezinme">
+      <a class="nav-link is-active" href="../projects.html">Projeler</a>
+      <a class="nav-link" href="../index.html#hakkimda">Hakkımda</a>
+      <a class="nav-link" href="../index.html#gecmis">Geçmiş</a>
+      <a class="nav-link" href="../index.html#iletisim">İletişim</a>
+    </nav>
+  </header>
+
+  <main id="icerik" tabindex="-1">
+    <div class="container">
+      <header class="case-header">
+        <a class="back-link" href="../projects.html">
+          <span class="link-arrow" aria-hidden="true">←</span>
+          <span>Tüm projeler</span>
+        </a>
+        <h1 class="hero-title">Otonom Sulama Sistemi</h1>
+        <p class="hero-lead">
+          Toprak ve hava sensörlerinden gelen verileri bitkiye göre değerlendirip sadece gerektiği
+          kadar sulama yapan, mobil uygulamadan takip edilebilen Arduino UNO Q projesi.
+        </p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Program</dt>
+            <dd>Robotistan UNO Q</dd>
+          </div>
+          <div>
+            <dt>Donanım</dt>
+            <dd>Arduino UNO Q (4 GB)</dd>
+          </div>
+          <div>
+            <dt>Durum</dt>
+            <dd>Prototip aşamasında</dd>
+          </div>
+          <div>
+            <dt>Yıl</dt>
+            <dd>2026</dd>
+          </div>
+        </dl>
+      </header>
+
+      <!-- Replace this hardware spec block with a real prototype photo (.case-hero-image) once taken -->
+      <section class="case-hero-spec" aria-label="Donanım ve sensör özeti">
+        <dl>
+          <div>
+            <dt>Kontrol kartı</dt>
+            <dd>Arduino UNO Q (4 GB RAM)</dd>
+          </div>
+          <div>
+            <dt>Sensörler</dt>
+            <dd>Toprak nemi, hava basıncı, hava nemi, rüzgâr hızı, su seviyesi</dd>
+          </div>
+          <div>
+            <dt>Aktüatör</dt>
+            <dd>Su seviyesi korumalı pompa kontrolü</dd>
+          </div>
+          <div>
+            <dt>Kullanıcı arayüzü</dt>
+            <dd>Canlı sensör takibi ve manuel müdahale için mobil uygulama</dd>
+          </div>
+        </dl>
+      </section>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="problem-baslik">
+          <h2 id="problem-baslik">Problem</h2>
+          <div class="prose">
+            <p>
+              Zamanlayıcıya bağlı klasik sulama sistemleri havanın nemli, rüzgârlı ya da toprağın
+              zaten ıslak olmasına bakmadan çalışıyor. Sonuçta ya su boşa gidiyor ya da bitki
+              ihtiyacı olan suyu zamanında alamıyor.
+            </p>
+            <p>
+              Hedefimiz, sabit saatlere göre değil çevresel verilere ve bitkinin türüne göre karar
+              veren, depo suyu bittiğinde pompayı koruyabilen bir sistem kurmaktı.
+            </p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="rolum-baslik">
+          <h2 id="rolum-baslik">Rolüm</h2>
+          <div class="prose">
+            <p>
+              Robotistan'ın Arduino UNO Q programına kabul edilen proje ekibinde sensör mimarisi,
+              yapay zekâ destekli karar akışı ve mobil izleme/kontrol uygulaması bağlantısı
+              üzerinde çalışıyorum.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <section class="case-wide" aria-labelledby="mimari-baslik">
+        <h2 id="mimari-baslik">Mimari</h2>
+        <div class="arch-diagram" role="region" aria-label="Otonom sulama sistem mimarisi">
+          <div class="arch-node">
+            <span class="arch-node-label">1 · Sensör katmanı</span>
+            <span class="arch-node-title">Çevre ölçümü</span>
+            <span class="arch-node-desc">Toprak nemi, hava basıncı, hava nemi, rüzgâr hızı ve depo su seviyesini okur.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">2 · Karar katmanı</span>
+            <span class="arch-node-title">Arduino UNO Q + analiz</span>
+            <span class="arch-node-desc">Sensör verilerini bitkiye göre değerlendirir; su seviyesi uygunsa pompayı gereken süre kadar çalıştırır.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">3 · İzleme</span>
+            <span class="arch-node-title">Mobil uygulama</span>
+            <span class="arch-node-desc">Anlık ölçümleri, geçmiş sulama kayıtlarını gösterir ve gerektiğinde uzaktan manuel kontrol verir.</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="teknolojiler-baslik">
+          <h2 id="teknolojiler-baslik">Teknolojiler</h2>
+          <div class="tag-list">
+            <span class="mono-tag">Arduino UNO Q</span>
+            <span class="mono-tag">C++</span>
+            <span class="mono-tag">Toprak nem sensörü</span>
+            <span class="mono-tag">Basınç &amp; nem sensörü</span>
+            <span class="mono-tag">Rüzgâr sensörü</span>
+            <span class="mono-tag">Su seviyesi sensörü</span>
+            <span class="mono-tag">Mobil uygulama</span>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="sonuc-baslik">
+          <h2 id="sonuc-baslik">Sonuç ve mevcut durum</h2>
+          <div class="prose">
+            <p>
+              Proje, Robotistan'ın 100 proje seçtiği Arduino UNO Q programına kabul edildi. Şu an
+              geliştirme ve prototip aşamasında; saha testleri tamamlandığında ölçüm sonuçlarını ve
+              prototip fotoğraflarını buraya ekleyeceğim.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact">
+              <div class="fact-value">Seçilen 100 proje</div>
+              <div class="fact-label">Robotistan Arduino UNO Q programına kabul</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">5 sensör</div>
+              <div class="fact-label">Toprak nemi, basınç, hava nemi, rüzgâr ve su seviyesi</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">Geliştirmede</div>
+              <div class="fact-label">Prototip kurulumu ve test süreci devam ediyor</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="baglantilar-baslik">
+          <h2 id="baglantilar-baslik">Bağlantılar</h2>
+          <div class="prose">
+            <p>
+              Proje hâlâ geliştirme aşamasında olduğu için kaynak kodu ve saha demo videosu testler
+              bittikten sonra paylaşılacak.
+            </p>
+          </div>
+          <div class="case-links">
+            <a class="btn btn-secondary" href="../projects.html">Tüm projeler</a>
+            <a class="btn btn-secondary" href="../index.html#iletisim">İletişim</a>
+          </div>
+        </section>
+
+        <a class="case-next" href="kampus-ikizi.html">
+          <div>
+            <span class="mono-label">Sonraki proje</span>
+            <div class="case-next-title">İnönü Üniversitesi Kampüs İkizi</div>
+          </div>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Yunus Emre Çarçur</p>
+      <div class="footer-links">
+        <a href="../index.html">Ana sayfa</a>
+        <a href="../projects.html">Tüm projeler</a>
+        <a href="../assets/yunus-emre-carcur-cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)<span class="sr-only"> (yeni sekmede açılır)</span></a>
+        <a href="mailto:yunuscarcur27@gmail.com">E-posta</a>
+        <a href="https://www.linkedin.com/in/yunus-emre-%C3%A7ar%C3%A7ur-8531a432b/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (yeni sekmede açılır)</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eren AI — Yunus Emre Çarçur</title>
+  <meta name="description" content="Personal Android AI voice assistant built with Kotlin, Google Bard NLP, Firebase Auth & Realtime Database, CameraX, ML Kit, and Google TTS/STT.">
+  <meta name="theme-color" content="#0B1220">
+  <meta property="og:title" content="Eren AI — Yunus Emre Çarçur">
+  <meta property="og:description" content="Android voice assistant featuring Google Bard NLP, Firebase Auth/Realtime Database sync, CameraX/ML Kit barcode scanner, and 50+ language translation.">
+  <meta property="og:url" content="https://yunuscarcur.github.io/en/projects/eren-ai.html">
+  <meta property="og:site_name" content="Yunus Emre Çarçur">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://yunuscarcur.github.io/assets/images/project-erenai.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://yunuscarcur.github.io/en/projects/eren-ai.html">
+  <link rel="alternate" hreflang="tr" href="../../projects/eren-ai.html">
+  <link rel="alternate" hreflang="en" href="eren-ai.html">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('portfolio-theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#F7F8FA');
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="../index.html"><span class="brand-mark" aria-hidden="true">YC</span><span>Yunus Emre Çarçur</span></a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="nav-link is-active" href="../projects.html">Projects</a>
+        <a class="nav-link" href="../index.html#about">About</a>
+        <a class="nav-link" href="../index.html#experience">Experience</a>
+        <a class="nav-link" href="../index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn lang-switch" href="../../projects/eren-ai.html" lang="tr" hreflang="tr" aria-label="Türkçe sürüme geç" title="Türkçe">TR</a>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch to light theme">
+          <svg data-icon-sun width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg data-icon-moon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn mobile-menu-btn" type="button" data-mobile-menu-btn aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <svg data-icon-menu width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+          <svg data-icon-close width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile navigation">
+      <a class="nav-link is-active" href="../projects.html">Projects</a>
+      <a class="nav-link" href="../index.html#about">About</a>
+      <a class="nav-link" href="../index.html#experience">Experience</a>
+      <a class="nav-link" href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="content" tabindex="-1">
+    <div class="container">
+      <header class="case-header">
+        <a class="back-link" href="../projects.html">
+          <span class="link-arrow" aria-hidden="true">←</span>
+          <span>All projects</span>
+        </a>
+        <h1 class="hero-title">Eren AI</h1>
+        <p class="hero-lead">
+          A personal Android AI assistant that opens apps, calls contacts, controls music and device settings via voice, handles open-ended prompts with Google Bard, and syncs user sessions and data via Firebase.
+        </p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Role</dt>
+            <dd>Solo developer</dd>
+          </div>
+          <div>
+            <dt>Platform</dt>
+            <dd>Android (minSdk 24 – 35)</dd>
+          </div>
+          <div>
+            <dt>Scope</dt>
+            <dd>Google Bard · Firebase · 22 Kotlin files</dd>
+          </div>
+          <div>
+            <dt>Year</dt>
+            <dd>2025</dd>
+          </div>
+        </dl>
+      </header>
+
+      <div class="case-hero-image">
+        <img
+          class="vt-erenai"
+          src="../../assets/images/project-erenai.webp?v=3"
+          alt="Eren AI app icon and dark-themed voice chat interface"
+          width="1280"
+          height="720"
+          fetchpriority="high"
+        >
+      </div>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="problem-heading">
+          <h2 id="problem-heading">Problem</h2>
+          <div class="prose">
+            <p>
+              I wanted to unify everyday Android actions — launching apps, dialing contacts, controlling media and brightness/volume, translating across 50+ languages, scanning barcodes, and answering open-ended questions — inside a single voice chat experience with secure cloud session and history sync.
+            </p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="role-heading">
+          <h2 id="role-heading">My Role</h2>
+          <div class="prose">
+            <p>
+              I built the app solo using Kotlin and Android XML (ViewBinding). I implemented the Google TTS/STT voice loop, a hybrid natural-language layer combining key-value intent matching (<code>IntentDetector</code>) with <strong>Google Bard</strong>, secure authentication and real-time sync via <strong>Firebase Auth &amp; Realtime Database</strong>, 50+ language translation via MyMemory API, and a CameraX + ML Kit barcode scanner with link routing.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <section class="case-wide" aria-labelledby="architecture-heading">
+        <h2 id="architecture-heading">Architecture</h2>
+        <div class="arch-diagram" role="region" aria-label="Eren AI module architecture">
+          <div class="arch-node">
+            <span class="arch-node-label">1 · Voice &amp; NLP</span>
+            <span class="arch-node-title">Google STT + Bard + Intent</span>
+            <span class="arch-node-desc">Matches deterministic device commands via key-value <code>IntentDetector</code> first, routing open-ended queries with <code>ContextManager</code> context to Google Bard.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">2 · Device &amp; tools</span>
+            <span class="arch-node-title">System, camera &amp; translation</span>
+            <span class="arch-node-desc"><code>AppLauncher</code>, <code>ContactManager</code>, media/system controls, CameraX + ML Kit autofocus/flash barcode scanner, link router, and 50+ language MyMemory translation.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">3 · Cloud &amp; speech</span>
+            <span class="arch-node-title">Firebase &amp; Google TTS</span>
+            <span class="arch-node-desc">Firebase Auth for secure sessions, Firebase Realtime Database for real-time chat/preference sync, and <code>TTSManager</code> for spoken responses.</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="tech-heading">
+          <h2 id="tech-heading">Technologies</h2>
+          <div class="tag-list">
+            <span class="mono-tag">Kotlin</span>
+            <span class="mono-tag">Android Studio &amp; XML</span>
+            <span class="mono-tag">Google Bard (NLP)</span>
+            <span class="mono-tag">Firebase Auth</span>
+            <span class="mono-tag">Firebase Realtime Database</span>
+            <span class="mono-tag">Google TTS / STT</span>
+            <span class="mono-tag">CameraX &amp; ML Kit Barcode</span>
+            <span class="mono-tag">MyMemory API</span>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="challenge-heading">
+          <h2 id="challenge-heading">Hardest technical challenge</h2>
+          <div class="prose">
+            <p>
+              The key challenge was separating deterministic device commands (opening apps, calling contacts, toggling music or settings) that must execute instantly from open-ended AI prompts without introducing latency or misrouting.
+            </p>
+            <p>
+              I solved this with a two-stage routing pipeline: a lightweight key-value <code>IntentDetector</code> resolves local device commands in milliseconds and dispatches them directly to system managers, while unmatched natural-language prompts flow with conversation context into the Google Bard layer, returning spoken output via <code>TTSManager</code> and persisting state to Firebase Realtime Database.
+            </p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="outcome-heading">
+          <h2 id="outcome-heading">Outcome</h2>
+          <div class="prose">
+            <p>
+              This project gave me deep hands-on experience with Android runtime permissions, CameraX lifecycles, ML Kit vision, hybrid NLP routing, and Firebase Auth/Realtime Database integration — paving the way for Watchly's Jetpack Compose and Cloud Functions architecture.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact">
+              <div class="fact-value">Bard + Intent</div>
+              <div class="fact-label">Local key-value commands + NLP response layer</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">50+ languages</div>
+              <div class="fact-label">Voice-in / voice-out real-time translation</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">Firebase Sync</div>
+              <div class="fact-label">Secure sessions and real-time cloud data sync</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="links-heading">
+          <h2 id="links-heading">Links</h2>
+          <div class="case-links">
+            <a class="btn btn-secondary" href="../projects.html">All projects</a>
+            <a class="btn btn-secondary" href="../index.html#contact">Contact</a>
+          </div>
+        </section>
+
+        <a class="case-next" href="market-otomasyon.html">
+          <div>
+            <span class="mono-label">Next project</span>
+            <div class="case-next-title">Market Automation System</div>
+          </div>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Yunus Emre Çarçur</p>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">All projects</a>
+        <a href="../../assets/yunus-emre-carcur-cv-en.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)<span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="mailto:yunuscarcur27@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/yunus-emre-%C3%A7ar%C3%A7ur-8531a432b/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js" defer></script>
+</body>
+</html>

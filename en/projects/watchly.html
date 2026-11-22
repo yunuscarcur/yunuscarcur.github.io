@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watchly: What To Watch — Yunus Emre Çarçur</title>
+  <meta name="description" content="Case study of Watchly, a Kotlin, Jetpack Compose, and Firebase Cloud Functions Android app published on Google Play.">
+  <meta name="theme-color" content="#0B1220">
+  <meta property="og:title" content="Watchly: What To Watch — Yunus Emre Çarçur">
+  <meta property="og:description" content="Android app live on Google Play with 240+ registered users, 8 languages, and 13 Cloud Functions.">
+  <meta property="og:url" content="https://yunuscarcur.github.io/en/projects/watchly.html">
+  <meta property="og:site_name" content="Yunus Emre Çarçur">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://yunuscarcur.github.io/assets/images/project-watchly.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://yunuscarcur.github.io/en/projects/watchly.html">
+  <link rel="alternate" hreflang="tr" href="../../projects/watchly.html">
+  <link rel="alternate" hreflang="en" href="watchly.html">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('portfolio-theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#F7F8FA');
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="../index.html"><span class="brand-mark" aria-hidden="true">YC</span><span>Yunus Emre Çarçur</span></a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="nav-link is-active" href="../projects.html">Projects</a>
+        <a class="nav-link" href="../index.html#about">About</a>
+        <a class="nav-link" href="../index.html#experience">Experience</a>
+        <a class="nav-link" href="../index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn lang-switch" href="../../projects/watchly.html" lang="tr" hreflang="tr" aria-label="Türkçe sürüme geç" title="Türkçe">TR</a>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch to light theme">
+          <svg data-icon-sun width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg data-icon-moon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn mobile-menu-btn" type="button" data-mobile-menu-btn aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <svg data-icon-menu width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+          <svg data-icon-close width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile navigation">
+      <a class="nav-link is-active" href="../projects.html">Projects</a>
+      <a class="nav-link" href="../index.html#about">About</a>
+      <a class="nav-link" href="../index.html#experience">Experience</a>
+      <a class="nav-link" href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="content" tabindex="-1">
+    <div class="container">
+      <header class="case-header">
+        <a class="back-link" href="../projects.html">
+          <span class="link-arrow" aria-hidden="true">←</span>
+          <span>All projects</span>
+        </a>
+        <h1 class="hero-title">Watchly: What To Watch</h1>
+        <p class="hero-lead">
+          A movie and TV tracking Android app live on Google Play that simplifies discovery and enables shared watchlists with friends.
+        </p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Role</dt>
+            <dd>Solo developer</dd>
+          </div>
+          <div>
+            <dt>Platform</dt>
+            <dd>Android · Play Store</dd>
+          </div>
+          <div>
+            <dt>Scope</dt>
+            <dd>188 Kotlin files · 8 languages</dd>
+          </div>
+          <div>
+            <dt>Year</dt>
+            <dd>2025 – 2026</dd>
+          </div>
+        </dl>
+      </header>
+
+      <div class="case-hero-image">
+        <img
+          class="vt-watchly"
+          src="../../assets/images/project-watchly.webp?v=3"
+          alt="Watchly search, home feed, and title detail screens"
+          width="1280"
+          height="720"
+          fetchpriority="high"
+        >
+      </div>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="problem-heading">
+          <h2 id="problem-heading">Problem</h2>
+          <div class="prose">
+            <p>
+              Browsing multiple streaming platforms to decide what to watch and keeping a shared watchlist with friends is usually fragmented. I wanted to build a fast, multilingual Android app that unifies discovery and collaborative lists in one place.
+            </p>
+            <p>
+              There were two critical engineering constraints: keeping the TMDB API key out of the client APK, and loading dozens of title details inside a watchlist with low latency instead of making sequential client calls.
+            </p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="role-heading">
+          <h2 id="role-heading">My Role</h2>
+          <div class="prose">
+            <p>
+              I built the Android client, Node.js serverless backend, and web sharing pages solo. I designed the UI in Jetpack Compose and localized the app into 8 languages: Turkish, English, German, Spanish, French, Italian, Japanese, and Portuguese.
+            </p>
+            <p>
+              On the backend I authored 13 Cloud Functions covering a batched TMDB proxy, push notifications when friends update shared lists, invite/follow deep-link resolution, list cover uploads, member stats, and Google Play compliant account deletion. I enforced Detekt and Spotless (ktlint) static checks and enabled R8 shrinking for release builds.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <section class="case-wide" aria-labelledby="architecture-heading">
+        <h2 id="architecture-heading">Architecture</h2>
+        <div class="arch-diagram" role="region" aria-label="Watchly system architecture">
+          <div class="arch-node">
+            <span class="arch-node-label">1 · Android client</span>
+            <span class="arch-node-title">Kotlin &amp; Jetpack Compose</span>
+            <span class="arch-node-desc">188 Kotlin files, Credential Manager Google Sign-In, Play In-App Updates, WorkManager notifications, and App Links.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">2 · Serverless backend</span>
+            <span class="arch-node-title">13 Cloud Functions (europe-west1)</span>
+            <span class="arch-node-desc">Secret Manager-backed TMDB proxy handling up to 50 parallel calls per request, plus invite, follow, and notification triggers.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">3 · Data &amp; web sharing</span>
+            <span class="arch-node-title">Realtime DB, Storage &amp; Hosting</span>
+            <span class="arch-node-desc">Real-time shared list sync, uCrop + ExifInterface profile media, and <code>/join</code>, <code>/sharedlist</code>, <code>/movie</code> web redirects.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-wide" aria-labelledby="screens-heading">
+        <h2 id="screens-heading">App screens</h2>
+        <div class="screen-gallery">
+          <figure class="screen-figure">
+            <button class="screen-zoom" type="button" data-zoom aria-label="Enlarge home screen">
+              <img
+                src="../../assets/images/watchly-screen-1.webp"
+                alt="Watchly home screen with featured movie card and recommendations"
+                width="540"
+                height="1170"
+                loading="lazy"
+                decoding="async"
+              >
+            </button>
+            <figcaption class="screen-caption">Home feed and featured picks</figcaption>
+          </figure>
+          <figure class="screen-figure">
+            <button class="screen-zoom" type="button" data-zoom aria-label="Enlarge search screen">
+              <img
+                src="../../assets/images/watchly-screen-2.webp"
+                alt="Watchly search screen with instant search bar and categories"
+                width="540"
+                height="1170"
+                loading="lazy"
+                decoding="async"
+              >
+            </button>
+            <figcaption class="screen-caption">Search and categories</figcaption>
+          </figure>
+          <figure class="screen-figure">
+            <button class="screen-zoom" type="button" data-zoom aria-label="Enlarge title detail screen">
+              <img
+                src="../../assets/images/watchly-screen-3.webp"
+                alt="Watchly title detail view with trailer, rating, streaming providers, and synopsis"
+                width="540"
+                height="1170"
+                loading="lazy"
+                decoding="async"
+              >
+            </button>
+            <figcaption class="screen-caption">Title details, ratings, and providers</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="tech-heading">
+          <h2 id="tech-heading">Technologies</h2>
+          <div class="tag-list">
+            <span class="mono-tag">Kotlin</span>
+            <span class="mono-tag">Jetpack Compose</span>
+            <span class="mono-tag">Material 3</span>
+            <span class="mono-tag">Navigation Compose</span>
+            <span class="mono-tag">WorkManager</span>
+            <span class="mono-tag">Credential Manager</span>
+            <span class="mono-tag">Coil &amp; Lottie</span>
+            <span class="mono-tag">Firebase Auth &amp; RTDB</span>
+            <span class="mono-tag">Cloud Functions (Node.js)</span>
+            <span class="mono-tag">App Check &amp; Crashlytics</span>
+            <span class="mono-tag">Remote Config &amp; FCM</span>
+            <span class="mono-tag">Firebase Hosting</span>
+            <span class="mono-tag">Detekt &amp; Spotless</span>
+            <span class="mono-tag">TMDB API</span>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="challenge-heading">
+          <h2 id="challenge-heading">Hardest technical challenge</h2>
+          <div class="prose">
+            <p>
+              When a user opened a watchlist containing dozens of movies or shows, firing individual TMDB requests from the client caused noticeable latency and risked exposing the API key inside the APK. At the same time, building a general proxy required preventing SSRF and abuse.
+            </p>
+            <p>
+              I implemented a <code>tmdbProxy</code> Cloud Function deployed in <code>europe-west1</code>. Every call verifies Firebase Auth and validates paths/parameters against strict regex rules, while <code>redirect: 'manual'</code> prevents leaking the Bearer token on 3xx redirects. Up to 50 sub-requests run in parallel via <code>Promise.allSettled</code> so a single failing title never breaks the batch, and <code>maxInstances: 10</code> caps peak billing.
+            </p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="outcome-heading">
+          <h2 id="outcome-heading">Outcome</h2>
+          <div class="prose">
+            <p>
+              Watchly is live on Google Play at v1.2.5 with 248 registered users and 39 shared watchlists actively used across 8 languages.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact">
+              <div class="fact-value">248 users</div>
+              <div class="fact-label">Registered active accounts on Firebase</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">39 shared lists</div>
+              <div class="fact-label">Collaborative watchlists created with friends</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">8 languages · 13 functions</div>
+              <div class="fact-label">Play Store v1.2.5 · up to 50 parallel TMDB calls</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="links-heading">
+          <h2 id="links-heading">Links</h2>
+          <div class="case-links">
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.emre.watchly" target="_blank" rel="noopener noreferrer">
+              <span>Open on Google Play</span>
+              <span aria-hidden="true">↗</span>
+              <span class="sr-only"> (opens in a new tab)</span>
+            </a>
+            <a class="btn btn-secondary" href="../projects.html">All projects</a>
+          </div>
+        </section>
+
+        <a class="case-next" href="otonom-sulama.html">
+          <div>
+            <span class="mono-label">Next project</span>
+            <div class="case-next-title">Autonomous Irrigation System</div>
+          </div>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Yunus Emre Çarçur</p>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">All projects</a>
+        <a href="../../assets/yunus-emre-carcur-cv-en.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)<span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="mailto:yunuscarcur27@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/yunus-emre-%C3%A7ar%C3%A7ur-8531a432b/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js" defer></script>
+</body>
+</html>

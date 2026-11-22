@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İnönü Üniversitesi Kampüs İkizi — Yunus Emre Çarçur</title>
+  <meta name="description" content="COP31 ve YÖK destekli, MapLibre üzerinde ~56 bin ağaç ve 3B binalarla modellenen İnönü Üniversitesi dijital ikizi.">
+  <meta name="theme-color" content="#0B1220">
+  <meta property="og:title" content="İnönü Üniversitesi Kampüs İkizi — Yunus Emre Çarçur">
+  <meta property="og:description" content="5 yıllık bütçe, enerji ve karbon salımı simülasyonu + 3B MapLibre kampüs ikizi.">
+  <meta property="og:url" content="https://yunuscarcur.github.io/projects/kampus-ikizi.html">
+  <meta property="og:site_name" content="Yunus Emre Çarçur">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:image" content="https://yunuscarcur.github.io/assets/images/project-kampus.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://yunuscarcur.github.io/projects/kampus-ikizi.html">
+  <link rel="alternate" hreflang="tr" href="kampus-ikizi.html">
+  <link rel="alternate" hreflang="en" href="../en/projects/kampus-ikizi.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('portfolio-theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#F7F8FA');
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#icerik">İçeriğe geç</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="../index.html"><span class="brand-mark" aria-hidden="true">YC</span><span>Yunus Emre Çarçur</span></a>
+
+      <nav class="site-nav" aria-label="Ana gezinme">
+        <a class="nav-link is-active" href="../projects.html">Projeler</a>
+        <a class="nav-link" href="../index.html#hakkimda">Hakkımda</a>
+        <a class="nav-link" href="../index.html#gecmis">Geçmiş</a>
+        <a class="nav-link" href="../index.html#iletisim">İletişim</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn lang-switch" href="../en/projects/kampus-ikizi.html" lang="en" hreflang="en" aria-label="Switch to English" title="English">EN</a>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Açık temaya geç">
+          <svg data-icon-sun width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg data-icon-moon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn mobile-menu-btn" type="button" data-mobile-menu-btn aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-nav">
+          <svg data-icon-menu width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+          <svg data-icon-close width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobil gezinme">
+      <a class="nav-link is-active" href="../projects.html">Projeler</a>
+      <a class="nav-link" href="../index.html#hakkimda">Hakkımda</a>
+      <a class="nav-link" href="../index.html#gecmis">Geçmiş</a>
+      <a class="nav-link" href="../index.html#iletisim">İletişim</a>
+    </nav>
+  </header>
+
+  <main id="icerik" tabindex="-1">
+    <div class="container">
+      <header class="case-header">
+        <a class="back-link" href="../projects.html">
+          <span class="link-arrow" aria-hidden="true">←</span>
+          <span>Tüm projeler</span>
+        </a>
+        <h1 class="hero-title">İnönü Üniversitesi Kampüs İkizi</h1>
+        <p class="hero-lead">
+          COP31 "AI Destekli Yeşil Üniversite Dijital İkizi" önerisi için geliştirdiğimiz, 5 yıllık
+          bütçe, enerji ve karbon salımı simülasyonu sunan 3B kampüs ikizi.
+        </p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Etkinlik</dt>
+            <dd>COP31 İklim Zirvesi</dd>
+          </div>
+          <div>
+            <dt>Destek</dt>
+            <dd>YÖK destekli</dd>
+          </div>
+          <div>
+            <dt>Platform</dt>
+            <dd>Flutter (Android &amp; Web)</dd>
+          </div>
+          <div>
+            <dt>Yıl</dt>
+            <dd>2026</dd>
+          </div>
+        </dl>
+      </header>
+
+      <div class="case-hero-image">
+        <img
+          class="vt-kampus"
+          src="../assets/images/project-kampus.webp?v=3"
+          alt="İnönü Üniversitesi Kampüs İkizi 3B haritası: fakülte etiketleri, gece modu düğmesi ve altta kampüs değeri çubuğu"
+          width="1280"
+          height="720"
+          fetchpriority="high"
+        >
+      </div>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="problem-baslik">
+          <h2 id="problem-baslik">Problem</h2>
+          <div class="prose">
+            <p>
+              Bir üniversite kampüsünün elektrik, doğalgaz, su, bakım ve ulaşım giderleri genelde
+              sadece rapor tablolarında kalıyor; öğrenciler ve karar vericiler için görsel bir
+              karşılık oluşturmuyor.
+            </p>
+            <p>
+              Hedefimiz, İnönü Üniversitesi yerleşkesini 6 bölgede 3B olarak modelleyip 5 yıllık bir
+              simülasyonda bütçeyi bina ve yol işlerine dağıtarak maliyet, memnuniyet ve karbon
+              etkisini (tCO₂e) anında gösterebilmekti.
+            </p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="rolum-baslik">
+          <h2 id="rolum-baslik">Rolüm</h2>
+          <div class="prose">
+            <p>
+              50 Dart dosyasından oluşan Flutter mobil ve web uygulamasının, harita-Flutter iletişim
+              köprüsünün (Android'de WebView, web'de aynı kökenli iframe), TR/EN dil desteğinin,
+              PDF politika raporu dışa aktarımının ve İngilizce COP31 sunum videosunun
+              hazırlanmasında çalıştım.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <section class="case-wide" aria-labelledby="mimari-baslik">
+        <h2 id="mimari-baslik">Mimari</h2>
+        <div class="arch-diagram" role="region" aria-label="Kampüs ikizi mimarisi">
+          <div class="arch-node">
+            <span class="arch-node-label">1 · 3B harita katmanı</span>
+            <span class="arch-node-title">MapLibre + Blender &amp; Python</span>
+            <span class="arch-node-desc">OSM ve Blender (<code>.glb</code>) bina modelleri, uydu ve Meta/WRI verisinden çıkarılan ~56 bin ağaç ve NOAA güneş açısı hesabı.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">2 · Simülasyon çekirdeği</span>
+            <span class="arch-node-title">Saf Dart (testli)</span>
+            <span class="arch-node-desc">Flutter'dan bağımsız <code>lib/oyun/</code> çekirdeği: Malatya iklimi, cephe yıpranması, güneş santrali, elektrikli ring, SKA/ESG ve GreenComp hesabı.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">3 · İstemci &amp; rapor</span>
+            <span class="arch-node-title">Flutter Android &amp; Web</span>
+            <span class="arch-node-desc"><code>ikiz_kanali_mobil</code> ve <code>ikiz_kanali_web</code> köprüleri, TR/EN arayüz ve <code>pdf_rapor.dart</code> ile paylaşılabilir politika raporu.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-wide" aria-labelledby="ekranlar-baslik">
+        <h2 id="ekranlar-baslik">Uygulama ekranları</h2>
+        <div class="screen-gallery screen-gallery--two">
+          <figure class="screen-figure">
+            <button class="screen-zoom" type="button" data-zoom aria-label="3B kampüs haritası ekranını büyüt">
+              <img
+                src="../assets/images/kampus-screen-1.webp"
+                alt="Kampüs İkizi 3B harita görünümü: Rektörlük, Kütüphane, İlahiyat Fakültesi ve stadyum etiketleri"
+                width="1024"
+                height="640"
+                loading="lazy"
+                decoding="async"
+              >
+            </button>
+            <figcaption class="screen-caption">3B kampüs haritası ve bina yönetimi</figcaption>
+          </figure>
+          <figure class="screen-figure">
+            <button class="screen-zoom" type="button" data-zoom aria-label="Sürdürülebilirlik paneli ekranını büyüt">
+              <img
+                src="../assets/images/kampus-screen-2.webp"
+                alt="Sürdürülebilirlik paneli: 35.300 tCO2e yıllık karbon salımı ve güneş santrali, elektrikli ring gibi yatırım kartları"
+                width="1024"
+                height="640"
+                loading="lazy"
+                decoding="async"
+              >
+            </button>
+            <figcaption class="screen-caption">SKA / ESG sürdürülebilirlik ve yatırım paneli</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="sorun-baslik">
+          <h2 id="sorun-baslik">En zor teknik sorun</h2>
+          <div class="prose">
+            <p>
+              Yaklaşık 56 bin ağacı (~32 bini Meta &amp; WRI 1 m taç yüksekliği haritasından, ~24
+              bini uydu görüntüsünden tespit edilen) ve tüm kampüs binalarını hem telefonlarda hem
+              de 1440p/4K sunum ekranlarında donmadan 3B çizmek en zor kısımdı.
+            </p>
+            <p>
+              Ağaçları 100 m'lik, binaları 200 m'lik hücrelere bölüp görüş dışındaki hücreleri
+              atladık; uzaktaki binaları ~%60 daha az üçgenle, ekranda 16 pikselden küçük ağaçları
+              tek kare ("nokta") olarak çizdik. Kare hızı 24 fps altına inince <code>K1</code>–<code>K3</code>
+              kademelerinde kalite otomatik düşüyor, 48 fps üstünde kademeli geri açılıyor; ayrıca
+              tümleşik ve ayrık GPU'lar için kare başına piksel sınırı uygulanıyor.
+            </p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="teknolojiler-baslik">
+          <h2 id="teknolojiler-baslik">Teknolojiler</h2>
+          <div class="tag-list">
+            <span class="mono-tag">Flutter</span>
+            <span class="mono-tag">Dart</span>
+            <span class="mono-tag">MapLibre</span>
+            <span class="mono-tag">Blender (.glb)</span>
+            <span class="mono-tag">Python</span>
+            <span class="mono-tag">WebView / iframe</span>
+            <span class="mono-tag">PDF Export</span>
+            <span class="mono-tag">OpenStreetMap</span>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="sonuc-baslik">
+          <h2 id="sonuc-baslik">Sonuç</h2>
+          <div class="prose">
+            <p>
+              Proje Yükseköğretim Kurulu tarafından desteklendi ve COP31 İklim Zirvesi'nde
+              sunulmaya hak kazandı. Şu an patent başvurusu hazırlık aşamasında.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact">
+              <div class="fact-value">YÖK destekli</div>
+              <div class="fact-label">COP31 İklim Zirvesi için seçildi</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">~56 bin ağaç</div>
+              <div class="fact-label">6 bölgede 3B binalar + hücre tabanlı LOD</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">Patent hazırlığı</div>
+              <div class="fact-label">Başvuru dosyası hazırlanıyor</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="baglantilar-baslik">
+          <h2 id="baglantilar-baslik">Bağlantılar</h2>
+          <div class="prose">
+            <p>
+              Patent başvurusu süreci tamamlandıktan sonra web sürümü ve sunum videosu eklenecek.
+              Proje hakkında sormak istediklerin varsa e-posta gönderebilirsin.
+            </p>
+          </div>
+          <div class="case-links">
+            <a class="btn btn-secondary" href="../projects.html">Tüm projeler</a>
+            <a class="btn btn-secondary" href="../index.html#iletisim">İletişim</a>
+          </div>
+        </section>
+
+        <a class="case-next" href="dolunay-cafe.html">
+          <div>
+            <span class="mono-label">Sonraki proje</span>
+            <div class="case-next-title">Dolunay Cafe</div>
+          </div>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Yunus Emre Çarçur</p>
+      <div class="footer-links">
+        <a href="../index.html">Ana sayfa</a>
+        <a href="../projects.html">Tüm projeler</a>
+        <a href="../assets/yunus-emre-carcur-cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)<span class="sr-only"> (yeni sekmede açılır)</span></a>
+        <a href="mailto:yunuscarcur27@gmail.com">E-posta</a>
+        <a href="https://www.linkedin.com/in/yunus-emre-%C3%A7ar%C3%A7ur-8531a432b/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (yeni sekmede açılır)</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

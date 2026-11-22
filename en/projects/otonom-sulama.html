@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous Irrigation System — Yunus Emre Çarçur</title>
+  <meta name="description" content="Autonomous irrigation system selected for Robotistan Arduino UNO Q program, using 5 environmental sensors and a mobile companion app.">
+  <meta name="theme-color" content="#0B1220">
+  <meta property="og:title" content="Autonomous Irrigation System — Yunus Emre Çarçur">
+  <meta property="og:description" content="Adaptive irrigation and mobile monitoring system built on Arduino UNO Q with 5 environmental sensors.">
+  <meta property="og:url" content="https://yunuscarcur.github.io/en/projects/otonom-sulama.html">
+  <meta property="og:site_name" content="Yunus Emre Çarçur">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://yunuscarcur.github.io/assets/images/project-sulama.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://yunuscarcur.github.io/en/projects/otonom-sulama.html">
+  <link rel="alternate" hreflang="tr" href="../../projects/otonom-sulama.html">
+  <link rel="alternate" hreflang="en" href="otonom-sulama.html">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (localStorage.getItem('portfolio-theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#F7F8FA');
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="../index.html"><span class="brand-mark" aria-hidden="true">YC</span><span>Yunus Emre Çarçur</span></a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="nav-link is-active" href="../projects.html">Projects</a>
+        <a class="nav-link" href="../index.html#about">About</a>
+        <a class="nav-link" href="../index.html#experience">Experience</a>
+        <a class="nav-link" href="../index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn lang-switch" href="../../projects/otonom-sulama.html" lang="tr" hreflang="tr" aria-label="Türkçe sürüme geç" title="Türkçe">TR</a>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch to light theme">
+          <svg data-icon-sun width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg data-icon-moon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn mobile-menu-btn" type="button" data-mobile-menu-btn aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <svg data-icon-menu width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+          <svg data-icon-close width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile navigation">
+      <a class="nav-link is-active" href="../projects.html">Projects</a>
+      <a class="nav-link" href="../index.html#about">About</a>
+      <a class="nav-link" href="../index.html#experience">Experience</a>
+      <a class="nav-link" href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="content" tabindex="-1">
+    <div class="container">
+      <header class="case-header">
+        <a class="back-link" href="../projects.html">
+          <span class="link-arrow" aria-hidden="true">←</span>
+          <span>All projects</span>
+        </a>
+        <h1 class="hero-title">Autonomous Irrigation System</h1>
+        <p class="hero-lead">
+          An Arduino UNO Q project that evaluates soil and weather sensor readings per plant type to water only as much as needed, paired with a mobile companion app.
+        </p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Program</dt>
+            <dd>Robotistan UNO Q</dd>
+          </div>
+          <div>
+            <dt>Hardware</dt>
+            <dd>Arduino UNO Q (4 GB)</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd>Prototype phase</dd>
+          </div>
+          <div>
+            <dt>Year</dt>
+            <dd>2026</dd>
+          </div>
+        </dl>
+      </header>
+
+      <section class="case-hero-spec" aria-label="Hardware and sensor summary">
+        <dl>
+          <div>
+            <dt>Controller board</dt>
+            <dd>Arduino UNO Q (4 GB RAM)</dd>
+          </div>
+          <div>
+            <dt>Sensors</dt>
+            <dd>Soil moisture, barometric pressure, air humidity, wind speed, water level</dd>
+          </div>
+          <div>
+            <dt>Actuator</dt>
+            <dd>Pump control with low-water protection</dd>
+          </div>
+          <div>
+            <dt>User interface</dt>
+            <dd>Mobile app for live telemetry and manual override</dd>
+          </div>
+        </dl>
+      </section>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="problem-heading">
+          <h2 id="problem-heading">Problem</h2>
+          <div class="prose">
+            <p>
+              Timer-based irrigation systems run blindly regardless of humidity, wind, or already wet soil — wasting water or leaving plants under-watered.
+            </p>
+            <p>
+              Our goal was to build a system that decides based on live environmental readings and plant requirements while automatically protecting the pump when tank water runs low.
+            </p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="role-heading">
+          <h2 id="role-heading">My Role</h2>
+          <div class="prose">
+            <p>
+              Within our team accepted into Robotistan's Arduino UNO Q program, I am working on the sensor architecture, AI-assisted decision flow, and mobile monitoring/control integration.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <section class="case-wide" aria-labelledby="architecture-heading">
+        <h2 id="architecture-heading">Architecture</h2>
+        <div class="arch-diagram" role="region" aria-label="Autonomous irrigation system architecture">
+          <div class="arch-node">
+            <span class="arch-node-label">1 · Sensor layer</span>
+            <span class="arch-node-title">Environmental sensing</span>
+            <span class="arch-node-desc">Reads soil moisture, barometric pressure, air humidity, wind speed, and tank water level.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">2 · Decision layer</span>
+            <span class="arch-node-title">Arduino UNO Q + analysis</span>
+            <span class="arch-node-desc">Evaluates readings against plant profiles and activates the pump only when tank level is safe.</span>
+          </div>
+          <div class="arch-node">
+            <span class="arch-node-label">3 · Monitoring</span>
+            <span class="arch-node-title">Mobile app</span>
+            <span class="arch-node-desc">Displays live sensor metrics, irrigation history, and remote manual override controls.</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="case-body">
+        <section class="case-section" aria-labelledby="tech-heading">
+          <h2 id="tech-heading">Technologies</h2>
+          <div class="tag-list">
+            <span class="mono-tag">Arduino UNO Q</span>
+            <span class="mono-tag">C++</span>
+            <span class="mono-tag">Soil Moisture Sensor</span>
+            <span class="mono-tag">Pressure &amp; Humidity Sensor</span>
+            <span class="mono-tag">Wind Sensor</span>
+            <span class="mono-tag">Water Level Sensor</span>
+            <span class="mono-tag">Mobile App</span>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="outcome-heading">
+          <h2 id="outcome-heading">Outcome &amp; current status</h2>
+          <div class="prose">
+            <p>
+              The proposal was selected among 100 projects in Robotistan's Arduino UNO Q program. The hardware prototype and field testing are currently underway; measured results and prototype photos will be added once testing concludes.
+            </p>
+          </div>
+          <div class="facts">
+            <div class="fact">
+              <div class="fact-value">Top 100 selected</div>
+              <div class="fact-label">Accepted into Robotistan Arduino UNO Q program</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">5 sensors</div>
+              <div class="fact-label">Soil moisture, pressure, humidity, wind, and water level</div>
+            </div>
+            <div class="fact">
+              <div class="fact-value">In progress</div>
+              <div class="fact-label">Prototype assembly and field testing ongoing</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="links-heading">
+          <h2 id="links-heading">Links</h2>
+          <div class="prose">
+            <p>
+              Because the project is still in active prototyping, source code and field demo video will be published once testing is complete.
+            </p>
+          </div>
+          <div class="case-links">
+            <a class="btn btn-secondary" href="../projects.html">All projects</a>
+            <a class="btn btn-secondary" href="../index.html#contact">Contact</a>
+          </div>
+        </section>
+
+        <a class="case-next" href="kampus-ikizi.html">
+          <div>
+            <span class="mono-label">Next project</span>
+            <div class="case-next-title">İnönü University Campus Twin</div>
+          </div>
+          <span class="link-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Yunus Emre Çarçur</p>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">All projects</a>
+        <a href="../../assets/yunus-emre-carcur-cv-en.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)<span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="mailto:yunuscarcur27@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/yunus-emre-%C3%A7ar%C3%A7ur-8531a432b/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js" defer></script>
+</body>
+</html>

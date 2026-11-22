@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .bg { fill: #0B1220; }
+    .ring { stroke: #1F2A44; }
+    .txt { fill: #38BDF8; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #FFFFFF; }
+      .ring { stroke: #E2E6EE; }
+      .txt { fill: #2563EB; }
+    }
+  </style>
+  <rect class="bg" width="32" height="32" rx="8"/>
+  <rect class="ring" x="0.5" y="0.5" width="31" height="31" rx="7.5" fill="none"/>
+  <text class="txt" x="16" y="21" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="700">YC</text>
+</svg>
