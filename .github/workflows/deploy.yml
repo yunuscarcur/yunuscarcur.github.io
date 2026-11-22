@@ -27,7 +27,7 @@ jobs:
       - name: Stage public site files only
         run: |
           mkdir -p _site
-          cp index.html projects.html 404.html robots.txt sitemap.xml favicon.svg _site/
+          cp index.html projects.html 404.html robots.txt sitemap.xml favicon.svg googled11846810c8586ed.html _site/
           cp -r css js assets projects en _site/
           touch _site/.nojekyll
 
